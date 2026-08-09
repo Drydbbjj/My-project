@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="signup-bg">
+    <div class="container" id="signup-form">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-5">
+                <form action="" method="post" class="form-style">
+                    {% csrf_token %}
+                    <h3 class="text-center" style="font-weight: bold;">SIGN UP</h3>
+                    <p class="text-center">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <hr>
+                        </div>
+                        </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            {{ form.username.label_tag }}
+                            {{ form.username }}
+                            <p class="error">{{ form.username.errors | striptags }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            {{ form.email.label_tag }}
+                            {{ form.email }}
+                            <p class="error">{{ form.email.errors | striptags }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            {{ form.password1.label_tag }}
+                            
+                            {{ form.password1 }}
+                            <div class="input-group-append">
+                               
+                            <p class="error">{{ form.password1.errors | striptags }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            {{ form.password2.label_tag }}
+                            {{ form.password2 }}
+                            <p class="error">{{ form.password2.errors | striptags }}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+
+                            <button type="submit" class="btn btn-primary btn-sm">Sign Up</button>
+                            
+                        </div>
+                    </div>
+                    <!-- Add more content here -->
+                    
+                {% if messages %}
+                    <div class="alert alert-danger mt-3" role="alert">
+                        {% for message in messages %} 
+                            {{ message }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
