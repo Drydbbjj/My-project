@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ssa0$+wg4v3p07!u0qd3y+l4a4&9(4g_2ys)g2+pwzhb)1cxqo'
+SECRET_KEY = 'use your superkey'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'wagging.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['Templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -164,8 +164,7 @@ LOGGING = {
 # Cookie settings
 SESSION_COOKIE_NAME = 'y_session_cookie'
 SESSION_COOKIE_AGE = 1209600  # 2 weeks
-SESSION_COOKIE_DOMAIN = 'example.com'
-SESSION_COOKIE_SECURE = True
+
 SESSION_COOKIE_HTTPONLY = True
 
 #...
